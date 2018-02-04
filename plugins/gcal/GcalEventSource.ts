@@ -105,6 +105,7 @@ export default class GcalEventSource extends EventSource {
 
     return {
       id: item.id,
+      resourceId: this.resourceId,
       title: item.summary,
       start: item.start.dateTime || item.start.date, // try timed. will fall back to all-day
       end: item.end.dateTime || item.end.date, // same

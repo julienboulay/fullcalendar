@@ -34,6 +34,7 @@ export default class EventSource extends Class {
   constraint: any
   allDayDefault: boolean
   eventDataTransform: any // optional function
+  resourceId: string
 
 
   // can we do away with calendar? at least for the abstract?
@@ -138,6 +139,8 @@ export default class EventSource extends Class {
     } else if (typeof rawProps.className === 'string') {
       this.className = rawProps.className.split(/\s+/)
     }
+
+    this.resourceId = rawProps.resourceId;
 
     return true
   }
